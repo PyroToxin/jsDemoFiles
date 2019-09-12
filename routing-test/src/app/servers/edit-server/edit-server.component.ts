@@ -22,18 +22,21 @@ export class EditServerComponent implements OnInit {
     console.log(this.route.snapshot.queryParams);
     console.log(this.route.snapshot.fragment);
 
+    //determine if user is allowed to edit the server using query parameter
     this.route.queryParams.subscribe(
       (queryParams: Params) => {
         this.allowEdit = queryParams['allowEdit'] === '1' ? true : false;
       }
     );
-    this.route.fragment.subscribe();
+    //also possible to get data for the fragment
+    //this.route.fragment.subscribe();
 
     this.server = this.serversService.getServer(1);
     this.serverName = this.server.name;
     this.serverStatus = this.server.status;
   }
 
+  //set new
   onUpdateServer() {
     this.serversService.updateServer(this.server.id, {name: this.serverName, status: this.serverStatus});
   }

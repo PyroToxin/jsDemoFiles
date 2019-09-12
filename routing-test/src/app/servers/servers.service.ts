@@ -30,6 +30,7 @@ export class ServersService {
     return server;
   }
 
+  //changes server parameters used bei edit server component
   updateServer(id: number, serverInfo: {name: string, status: string}) {
     const server = this.servers.find(
       (s) => {

@@ -28,6 +28,7 @@ export class ServerComponent implements OnInit {
   }
 
   onEdit() {
+    //navigate to edit component using relative path, keep old query parameters
     this.router.navigate(['edit'], {relativeTo: this.route, queryParamsHandling: 'preserve'});
   }
 }

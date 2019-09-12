@@ -13,6 +13,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  //shows edit component of a server using the server id
+  //uses edit param to determine if server can be changed
+  //also uses a fragment
   onLoadServers(id: number) {
     this.router.navigate(['/servers', id, 'edit'], {queryParams: {allowEdit: 1}, fragment: 'loading'});
   }

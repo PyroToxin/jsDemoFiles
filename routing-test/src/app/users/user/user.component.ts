@@ -17,6 +17,7 @@ export class UserComponent implements OnInit {
       name: this.route.snapshot.params['name']
     };
 
+    //used to update user each time the route is changed
     this.route.params.subscribe(
       (params: Params) => {
         this.user.id = params['id'];
